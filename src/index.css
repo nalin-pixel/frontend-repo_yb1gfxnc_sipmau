@@ -15,6 +15,7 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: rgb(2,6,23);
   }
 
   body {
@@ -22,7 +23,7 @@
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Award-level motion polish */
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
@@ -43,4 +44,21 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  .animate-aurora {
+    animation: aurora 14s linear infinite;
+    mix-blend-mode: screen;
+  }
+
+  .glow-shadow {
+    box-shadow: 0 20px 120px -20px rgba(34,211,238,0.35), 0 10px 40px -10px rgba(59,130,246,0.25);
+  }
+}
+
+@keyframes aurora {
+  0% { transform: translate3d(-10%, -10%, 0) rotate(0deg); }
+  25% { transform: translate3d(10%, -20%, 0) rotate(90deg); }
+  50% { transform: translate3d(20%, 10%, 0) rotate(180deg); }
+  75% { transform: translate3d(-10%, 20%, 0) rotate(270deg); }
+  100% { transform: translate3d(-10%, -10%, 0) rotate(360deg); }
 }
